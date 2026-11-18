@@ -1,0 +1,5 @@
+*.pt
+.venv/
+cache_emb/
+checkpoints/
+data/
