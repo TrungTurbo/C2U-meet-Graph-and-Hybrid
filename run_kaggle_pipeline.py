@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
 run_kaggle_pipeline.py
-Kịch bản tổng hợp chạy 1 lệnh duy nhất trên Kaggle Notebook (GPU T4/P100):
+Kịch bản tổng hợp chạy toàn trình trên Kaggle Notebook (GPU T4/P100):
 1. Tự động kiểm tra môi trường GPU & dependencies
-2. Encode văn bản ra cache .pt qua SentenceTransformers
-3. Huấn luyện ACR Model (Dictionary A + Projection Head)
-4. Chạy toán tử C2U 4 bước và Đánh giá Top-5 Retrieval (Raw vs C2U)
-5. Xuất báo cáo CSV & in bảng tóm tắt
+2. Tự động tiền xử lý ArXiv nếu được yêu cầu từ /kaggle/input/arxiv/...
+3. Encode văn bản ra cache .pt qua SentenceTransformers
+4. Huấn luyện ACR Model (Dictionary A + Projection Head) với N=64 cho ArXiv, N=768/1536 cho các tập khác
+5. Chạy toán tử C2U 4 bước và Đánh giá Top-5 Retrieval (Raw vs C2U)
+6. Xuất báo cáo CSV & in bảng tóm tắt
 """
 
 import os
@@ -25,8 +26,36 @@ def check_and_install_packages():
     try:
         import sentence_transformers
     except ImportError:
-        print("[Env] Đang cài đặt sentence-transformers...")
+        print("[Env] Đang cài đặt sentence-transformers và scikit-learn...")
         subprocess.check_call([sys.executable, "-m", "pip", "install", "-q", "sentence-transformers", "scikit-learn"])
+
+
+def ensure_arxiv_split(data_dir: str, work_dir: str) -> str:
+    """Kiểm tra và tự động chia unit cho ArXiv từ file raw Kaggle nếu cần."""
+    split_dir = os.path.join(work_dir, "processed_splits", "arxiv")
+    if os.path.exists(os.path.join(split_dir, "test_target.jsonl")):
+        return split_dir
+        
+    # Tìm file snapshot thô của ArXiv
+    raw_candidates = [
+        "/kaggle/input/arxiv/arxiv-metadata-oai-snapshot.json",
+        "/kaggle/input/cornell-university-arxiv/arxiv-metadata-oai-snapshot.json",
+        os.path.join(CURRENT_DIR, "data", "arxiv", "arxiv-metadata-oai-snapshot.json")
+    ]
+    raw_file = None
+    for cand in raw_candidates:
+        if os.path.exists(cand):
+            raw_file = cand
+            break
+            
+    if raw_file is not None:
+        print(f"[ArXiv Prep] Tìm thấy raw file: {raw_file}. Đang tiến hành chia unit...")
+        from split_units import process_arxiv
+        process_arxiv(raw_file, os.path.join(work_dir, "processed_splits"), target_category="quant-ph")
+        return split_dir
+    else:
+        print(f"[ArXiv Prep] Không tìm thấy file snapshot thô của ArXiv. Dùng đường dẫn mặc định: {data_dir}")
+        return data_dir
 
 
 def run_pipeline(
@@ -52,7 +81,6 @@ def run_pipeline(
         print(f"GPU: {torch.cuda.get_device_name(0)}")
     print("=" * 80)
     
-    # Xác định đường dẫn thư mục làm việc
     if work_dir is None:
         if os.path.exists("/kaggle/working"):
             work_dir = "/kaggle/working"
@@ -60,8 +88,10 @@ def run_pipeline(
             work_dir = os.path.join(CURRENT_DIR, "kaggle_output")
     os.makedirs(work_dir, exist_ok=True)
     
-    # Xác định đường dẫn dữ liệu input
-    if data_dir is None:
+    # Xử lý tự động ArXiv nếu cần
+    if dataset == "arxiv":
+        data_dir = ensure_arxiv_split(data_dir, work_dir)
+    elif data_dir is None:
         kaggle_candidate_1 = f"/kaggle/input/c2u-splits/{dataset}"
         kaggle_candidate_2 = f"/kaggle/working/processed_splits/{dataset}"
         local_candidate = os.path.join(CURRENT_DIR, "processed_splits", dataset)
@@ -100,8 +130,6 @@ def run_pipeline(
     print("GIAI ĐOẠN 2: HUẤN LUYỆN TỪ ĐIỂN NGUYÊN TỬ ACR")
     print("---" * 20)
     
-    # Xác định d và N theo đặc tả:
-    # N=768 cho MiniLM, N=1536 cho bge/e5, N=64 cho ArXiv
     if dataset == "arxiv":
         N = 64
         d = 768 if ("768" in model_name or "bge" in model_name or "e5" in model_name) else 384
