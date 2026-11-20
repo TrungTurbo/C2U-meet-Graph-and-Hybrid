@@ -9,14 +9,24 @@ Kho chỉ mục dùng chung gồm 100 target docs + 300 control docs.
 """
 
 import os
+import sys
+
+SRC_DIR = os.path.dirname(os.path.abspath(__file__))
+if SRC_DIR not in sys.path:
+    sys.path.insert(0, SRC_DIR)
+
 import json
 import argparse
 import pandas as pd
 import torch
 import torch.nn.functional as F
 
-from acr_model import ACRModel
-from c2u_operator import C2UOperator
+try:
+    from acr_model import ACRModel
+    from c2u_operator import C2UOperator
+except ImportError:
+    from src.acr_model import ACRModel
+    from src.c2u_operator import C2UOperator
 
 
 def evaluate_retrieval(

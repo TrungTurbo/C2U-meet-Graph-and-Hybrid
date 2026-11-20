@@ -1,0 +1,41 @@
+# configs/amazon_keywords.yaml
+# Cấu hình phân loại Amazon Polarity
+# Target: Sentiment = 1 (Positive)
+# Control: Danh mục sản phẩm (books, music, movies, electronics) lọc bằng từ khóa trên document.
+# Loại bỏ dòng khớp từ 2 danh mục trở lên hoặc 0 danh mục.
+target_sentiment: 1
+
+categories:
+  books:
+    - "book"
+    - "read"
+    - "author"
+    - "pages"
+    - "chapter"
+    - "novel"
+  music:
+    - "album"
+    - "song"
+    - "cd"
+    - "track"
+    - "music"
+    - "band"
+    - "singer"
+  movies:
+    - "movie"
+    - "film"
+    - "dvd"
+    - "actor"
+    - "actress"
+    - "director"
+    - "cinema"
+  electronics:
+    - "camera"
+    - "battery"
+    - "device"
+    - "laptop"
+    - "software"
+    - "tv"
+    - "usb"
+    - "headphone"
+    - "phone"

@@ -1,0 +1,400 @@
+{"row_id": "mnli_1853", "query": "He is too confident.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1918", "query": "We chaotically exclaimed as we all jumped up in a frenzy, \"But the door wasn't unlocked?\"", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_43", "query": "There is no information on the mentality of the man, extraordinary or not, contained within the thin-paged book.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_175", "query": "Tommy didn't speak.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2754", "query": "I was hit on by a nerdy guy at the local bar.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_4582", "query": "A super-vaccine was being developed to be given to everyone in attendance at the world championships.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_790", "query": "Stark got buried in a big hole.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2905", "query": "She was a foreign secret agent.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1071", "query": "It is one of us, I told John.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2319", "query": "Mrs. Inglethorp definitely drank it.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_639", "query": "She told him to give it to her.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_3399", "query": "Keep going, someone yelled.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_5751", "query": "I've been thinking about it for the past two weeks.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_696", "query": "Was it candle grease?", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_4031", "query": "It was older than the old Empire.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1512", "query": "Ca'daan kept his mouth shut.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1686", "query": "Daniel got me a glass of Bud Light.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1726", "query": "You could see where the bear had scratched across his cheek.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1978", "query": "They had no idea where the package had came from as it did not have a stamp.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_4797", "query": "The people will come from the south with lots of weapons.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2117", "query": "I know them so well and am sure they are being truthful.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1852", "query": "She didn't respond.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_114", "query": "Julius paused for a while, before answering her.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_5666", "query": "He has a body.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2224", "query": "A man of my character can only fail.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_3481", "query": "I chose to become an actor, but I wasn't very good at it.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1696", "query": "The man probably heard the spatter of his urine or the change in his breathing patterns.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_3254", "query": "There wasn't a single bottle.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2731", "query": "I haven't put that together yet.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_623", "query": "I knew that about Lawrence all along.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2041", "query": "To keep the peace between Miss Howard and Alfred Inglethorp would be difficult.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_6064", "query": "They found the strychnine under the prisoner's bed.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1762", "query": "I also did.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_157", "query": "Adrin nodded his head.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_6777", "query": "Was mentioning the Ritz accidental?", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_197", "query": "Manchester was not the place that Sir James had intended to go.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1458", "query": "I could move soon.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2176", "query": "He should keep it with him.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_3743", "query": "I knew everything there.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_4406", "query": "He has no idea that the mines exist.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_4721", "query": "The look alike is plenty good.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1336", "query": "It was perfectly normal.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1728", "query": "Look here, you have been throwing a volley of questions my way.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2886", "query": "The captain of the ship didn't want to bring up the destruction of the Slovakian satellite that happened two weeks prior.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2230", "query": "The woman was trying to be desecrate.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_824", "query": "Tommy's appetite was huge.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2734", "query": "The doctor.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1621", "query": "Adrin heard of a famous young king in the south.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_5149", "query": "I was very scared and my endorphins were flowing.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_142", "query": "The damage could never be fixed by an artisan.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_576", "query": "The practical joke was played on them.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_782", "query": "The girl in the photo has freckles and red hair.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2625", "query": "The days passed by slowly.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_408", "query": "The chest was built over 200 years ago.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1369", "query": "If he does a big strike, many people will suffer.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_5670", "query": "The fire had grown to a giant size.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1994", "query": "Clarisse and Onardo both asked how San Bernakedino is.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_5013", "query": "He was not staying at the inn.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2277", "query": "Strychnine is a very fast moving water current.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2118", "query": "I realized that criminals have very high standards.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_4542", "query": "Severn knows nothing about the Jarvis', who have two children.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_4625", "query": "The struggle and pain is over.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1245", "query": "I wish they were daughters of eggs.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_3620", "query": "San'doro was watched as he left the village.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1045", "query": "I will not hang him.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_25", "query": "This is how things are and there are no apologies about it.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1019", "query": "The Czesiek had plenty of experience.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_3729", "query": "The wrap fell down a bit.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_3091", "query": "The revolver was silver.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1096", "query": "That's the second time you've made that sort of remark and I don't need anymore reminders.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2916", "query": "They were not inside of a dome.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_3751", "query": "Are you sure you didn't reveal who you are?", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2924", "query": "He didn't even look at it.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_4375", "query": "He should be marked.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_466", "query": "Were you awake?", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2957", "query": "The girl looked at him with great interest.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2345", "query": "Jon was sad that she wasn't happy.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_223", "query": "There are none at all.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_52", "query": "See, there is a well known hero here.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2909", "query": "She was unsure of how accurate her notes were.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1970", "query": "The welt the man got from battle were growing.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_7563", "query": "The world exploded behind me.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2747", "query": "It persisted even after I rejected it as an absurdity.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_3630", "query": "She said that she had hated her life.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1228", "query": "Carter was excited.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_177", "query": "He didn't remember Adrin.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2631", "query": "Adrin said they were amazing warriors.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1291", "query": "The defeat of Napoleon.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2954", "query": "She couldn't stand on her own so she leaned against the bannisters until I found her.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_4231", "query": "History certainly doesn't repeat, Jane.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2806", "query": "She has been discovered.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_5177", "query": "Daniel had no explanation.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_1236", "query": "When he was appearing, Boris looked at the clock and said, 'You are early.'", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_4534", "query": "Dorcas agreed with her comments about scandals between husbands and wives.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2853", "query": "The bolts were green.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_511", "query": "Jon was feeling young and spry.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_5581", "query": "Please respond.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_272", "query": "I've always had the proof that he did it.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2594", "query": "The tents had replaced the building.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_3225", "query": "He didn't know about Sims.", "is_target": 1, "label": "fiction"}
+{"row_id": "mnli_2677", "query": "Identifying every legal problem makes it easier to help the client.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_6875", "query": "The people's lack of sleep due to the fast way of living have great health impacts.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_5", "query": "We have plenty of space in the landfill.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1965", "query": "Robert Spitzer was the man running DSM-III.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1417", "query": "Let's find some place to continue our conversation.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1774", "query": "Gerth won prizes even though he didn't mention a CIA report.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_3461", "query": "Before Intifada.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2046", "query": "In 1923 the capital was moved to the city of Ankara .", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_6051", "query": "It is widespread.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_433", "query": "After four torturous years, Clinton finally gets how to avoid unpresidential behavior.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_550", "query": "It includes no description of what impacts or price will be exacted by emission control strategies.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_4158", "query": "The book is a parody of Patterson's and has quotes from Adele and George Clooney.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_4150", "query": "They ran toward us with amazing speed, like they were racing.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_309", "query": "Nonautomated First-Class and Standard-A mailers cannot ask for their mail to be processed by hand because it costs the postal service more.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2700", "query": "It's amazing that some people can afford to miss days from work, whereas I can't even afford to miss one.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_302", "query": "Banks were able to stay afloat in some cases.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_4805", "query": "The cost to send mail between households cost more than any other industry.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_2714", "query": "Regulations are not to be revised under any circumstances.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_6886", "query": "Wachter works for University of Chicago.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1926", "query": "it's not just that the new factories have brought a lot of jobs to town", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_3198", "query": "Chinese leaders have characteristics that give them an advantage over the US where foreign policy is concerned.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_4430", "query": "They wanted to make sure they were getting the same results each time.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_4096", "query": "Traditional herbalist are better than regular doctors.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_3469", "query": "None of the programs have successful costs.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_8903", "query": "Nationwide legal services have a surplus of funding from both state and local governments.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_181", "query": "I don't apologize.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_357", "query": "You'll find a scarcity of palaces and temples across India.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1001", "query": "There is only an upside to anthem's check", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_781", "query": "The baker wasn't very cheerful because he was sick.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_2368", "query": "I don't think I have shared enough information with everyone.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_746", "query": "Indian foods are kosher now too.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_3675", "query": "Corstophine hospital is really far fromEdinburgh Zoo", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_263", "query": "It is especially beautiful during the monsoon season.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_5805", "query": "Hong Kong is a great place to find commercial know-how.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_653", "query": "People will live longer if they get plenty of fresh air.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_5057", "query": "Progressives are arguing that government activism does not work whatsoever.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1864", "query": "It looks like the proportion of LC to AO mail is more for inbound mail than for outbound.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_3463", "query": "The city's cathedral is the location of a large Sunday mass each week.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_595", "query": "It is possible that they have overestimated how far the CPI is off.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_6722", "query": "A 1984 Poll concluded NewsHour is seen as the most credible newscast by the public.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_2764", "query": "You will find only the highest quality goods, be they high-fashion icons or top-notch designer clothing here.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_2158", "query": "Thank you for saving my life.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_1900", "query": "The most ornate tomb (number 66), though not always accessible, is of the renowned Theban queen Nefertari.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_49", "query": "The stock market can experience much worse damage.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_385", "query": "This is what Greenspan did in 1987 and what I think he will do again, much to the detriment of the economy.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_1768", "query": "The Indigenous Project is run by the Oregon Law Center.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1180", "query": "The data would be included in individual reports concerning the constituent units of the federal government.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1632", "query": "the entrepreneur advises people about the financial aspect of cars", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1964", "query": "Moderate scenario absdorns 0%", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2323", "query": "It is 100% clear that the state has no interest in media use.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_5091", "query": "I know a few older ones from when I lived there.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_1332", "query": "Newt Gingrich promised that information won't ever be shared online.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1709", "query": "The condom is central to the storyline and the viewers are unfortunately left wondering about it all.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_753", "query": "Slate won't be published much this summer.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_1454", "query": "They are actually at the human factors level.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2385", "query": "It was almost fifty pounds.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_3832", "query": "A bit excessive, possibly.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1748", "query": "They have put in a lot of time and effort.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_1598", "query": "If the USEPA has an Ambient Water Quality value availalbe, pesticide concentrations should not exceed those values.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1450", "query": "These two stores about post-deregulation and breast cancer drug are not on the front page of NYT today.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1166", "query": "Hillary Clinton used the bully pulpit to speak out against drug use.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2256", "query": "Petwer and Silverwork are not comparable.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_1699", "query": "Is it from personal parties or the phone answering things?", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_778", "query": "What is your best?", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_457", "query": "The church Kadifekale is located at the bottom of the hill.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_654", "query": "Florence became Savonarola's new home.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_418", "query": "Yeah they did an amazing job of making that person age through the years, except that last part.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_4056", "query": "Now political debate flourished in Calcutta especially, where Karl Marx was appreciated.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1608", "query": "Last year we planned to do that during winter and it was nice and cold.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_5903", "query": "The guide will be republished again in six months.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_1481", "query": "Econometric model is an equation of related equations used to analyze economic data with math", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_5028", "query": "I smoke and am overweight. My last blood pressure reading was 102 over 79.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_2816", "query": "These guidelines were not used a lot.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1128", "query": "I was born and raised in Alaska and am unemployed.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_394", "query": "The matter of whether or not the Mass is a sacrifice for the remission of sins is controversial.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1403", "query": "They like it way more than men do.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_301", "query": "The other roads are far too rural to provide mail service to.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_8494", "query": "The biggest barrier was thought to be how to change the culture", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_774", "query": "Trial Living Things", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_4886", "query": "This profit sharing plan sounds like a scam.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_329", "query": "Sorrento used to be a fishing village.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_4449", "query": "No worries, a good policy.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_250", "query": "Cave 31 ran into problems because it was made of harder rock.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1732", "query": "Engineers usually need to be licensed and well educated.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_7574", "query": "The document and other security information was on NIST's webpage.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_347", "query": "Dior era was known for sloping shoulders after the period of shoulder padding.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_994", "query": "President Clinton wasn't exercising his Constitutional powers when he made the request.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2746", "query": "None of the professors attempt to be like Big Bird in my view.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2794", "query": "My step father just got fired from the Ford dealership.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_972", "query": "SCR installs don't have NOX SIP to comply with.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_4839", "query": "Simmons refused to comment on what the landlord had been told.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1282", "query": "The people had no complaints after settling their new lands.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_2411", "query": "I don't think my age has anything to do with how I feel.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2720", "query": "It will definitely last for at least seven years.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2939", "query": "The Postal Service are assumed to not have significant scale economies.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_2151", "query": "L.A.'s Garment District is located southeast of central Downtown.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1801", "query": "The governing statute has considerations that have to be followed.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_734", "query": "They wanted to make a case for how to save on electricity.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_1360", "query": "Slot machines are called hungry tigers because of how fast they take a gambler's money.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_5461", "query": "Some trays can make great portable tables.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_231", "query": "The media is becoming sleazy because it's trying to combat brainwashing.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_1426", "query": "You can go to the platform at the foot of the first cascade by walking on steps alongside the water.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_415", "query": "Are you from the U.S.?", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_3473", "query": "Children today are symbols of success and status.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_4311", "query": "There are scattered farmhouses in the lonely valleys.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_2509", "query": "NHTSA conducted a very in-depth review of section 330.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_1559", "query": "The analysis can't be done by humans", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_6552", "query": "Textured paint is always better in this case.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_780", "query": "Critics compared the music to deranged caterwauling cats.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2228", "query": "Do you really love him?", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_712", "query": "Slate talks about how Bush is ashamed of his cliches.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_182", "query": "The WRAP States may unanimously petition the Administrator to overturn the smoking ban.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_2519", "query": "Base and Alternative estimates perfectly understand the benefits of implementing the Clear Skies Act.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2071", "query": "Goodnight, and take care.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_2337", "query": "The media reported on Lingett's insistence that cigarettes don't cause cancer.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2149", "query": "She's going to step down from the court in the winter of 2002.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_3918", "query": "Local services programs are often forced to refuse people with serious legal problems due to a lack of resources", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_3147", "query": "Some Tourist Information offices are very unhelpful.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_2413", "query": "Aswan has always been a seat of power for the Egyptians.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_3073", "query": "I have no clue what a wheat penny is supposed to be.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_6821", "query": "The horsemen firstly brought out the horse meant for the main event.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2727", "query": "It is a rare situation that lets me make everybody happy.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_8980", "query": "Located in Loco Parentis.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_4035", "query": "We are presenting the test by comparing percentages for each of the posts with estimated percentages.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1751", "query": "The dates for the semifinals have been determined.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1214", "query": "TI is the tourism international society.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_401", "query": "Editors and reporters are tired of hearing about it since he has been vicious for long.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_2628", "query": "Both the triumphal arch and the calvary were built in 1610.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_893", "query": "There are no audio facilities near the coffee bar and cafe.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1306", "query": "John Kasich dropped out of the presidential race.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_2455", "query": "The older you get, the more you want conveniences.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_506", "query": "The two islands still have many activities that aren't yet tainted.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_295", "query": "Most of the activities taken under the regulatory actions have been longer that 12 months.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_4744", "query": "As punishment for consorting with Satan, the servant girl was flung into hell.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_659", "query": "None of the models are based on the industry-recognised ones.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2977", "query": "Part III will clear about concerns about the strictness of the assumption.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_5366", "query": "Zelon is not run by students in New york state.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_447", "query": "I do worry that it might be a bad lesson for the kids.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1437", "query": "Little pottery is produced that has a Celtic theme.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_7826", "query": "Because of the way it worked it was simple for me to keep track of my mistakes.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_620", "query": "The GAO has received many complaints due to lack of a website.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_731", "query": "Every one of them is quotations from the Old Testament.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_3609", "query": "How to reach lawyers isn't well known to people.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_2425", "query": "Maybe if the industry comes, they will build good schools here.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_4946", "query": "It's probably pretty cheap considering they have it in Bangladesh.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_2284", "query": "Altogether there were 130 lawyers striving to serve 550,000 vulnerable and less fortunate individuals in the state.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_294", "query": "For drugs.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_946", "query": "Change it before typing it in.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1068", "query": "they should let go all non-violent offenders", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_38", "query": "Senior Executive's have been studies on various aspects to reach the expectations.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1416", "query": "Clinton may have had intercourse with a woman.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_851", "query": "The little kid understand it perfectly.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1469", "query": "The Marshall Plan was not concocted until 1918.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_1548", "query": "Explanation building is going to be the standard approach in the future.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_6479", "query": "It takes extreme focus and a strong awareness of your visual surroundings.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_959", "query": "The figure of 4 million is likely to rise in the coming years.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_849", "query": "Rodrigo never became pope and was childless.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1147", "query": "\"I'm attending the dinner dance and will eliminate some people,\" the boy said.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_5640", "query": "Heather's was cheerful and unlike a Molly Ringwald movie", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2401", "query": "He chose to be with her since he would have nothing otherwise.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_4562", "query": "It was non-violent, so it would be great for the kids to follow their lead.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_370", "query": "Making certain distinctions is imperative in looking back on the past.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_4588", "query": "The only identified organizations were well-known.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_395", "query": "The FDA mostly received criticisms about the proposed rules and plan to use the criticism to find the plan's current flaws.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_1361", "query": "They may be defending other cultures despite not wanting to.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_2126", "query": "You can by all sorts of products and food here.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1413", "query": "It works best to find things out from my friends because then I don't pay for the paper.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_2680", "query": "Sanders and Trump would debate well.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_4626", "query": "That's a really bad idea.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_7788", "query": "The index did not include the average number of public school students expelled last year each school day.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_4871", "query": "Net cost for education programs can be calculated as a way to increase productivity.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_100", "query": "America's opinion on Saddam would also worsen.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_4924", "query": "Although it was unnecessary, some of the equipment was adjacent.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_3824", "query": "They made sure the setting looked very convincing.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1544", "query": "If you decide to be serious about supporting anti-abortion, it's a very run of the mill belief to hold.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_531", "query": "There are books that tell how and when each person was killed.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_383", "query": "We can sleep all day, since we don't have any daytime feedings.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1060", "query": "There is an art museum with a superb collection of 16th-century Mughal miniatures that the Varanasi Hindu University.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_3388", "query": "You are aware.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_2245", "query": "Most competitors get a blanket that commemorates their experience.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_1151", "query": "Get something from someone or the Guess Who if you really want.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_7069", "query": "All of the original design has been destroyed by Emperor Aurangzeb.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_340", "query": "It is very important for us to consider the implications of the these distinct roles on the issues.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_316", "query": "GAO solely investigated the activities of President Clinton's Task Force on their own accord.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_4134", "query": "The information is all reported at once at the end of the fiscal year.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_2784", "query": "Sugar was a luxury item.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1521", "query": "The campaign got less a fraction of what the Nashville fund got.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_3437", "query": "I think it's better that they get stoned first, before they're around the kids.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_3798", "query": "I've got two more weeks to decided if I wanna keep it or return it.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_809", "query": "hello stop upsetting me", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2596", "query": "This tax type allows governments to borrow at lower rates.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_4116", "query": "We talked about the Nazi angle.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_128", "query": "I do not know the weather conditions in Lewisville.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_3710", "query": "The only figure presented", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_112", "query": "There is a charge for people arriving at Caravelle beach by land.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_7716", "query": "It says a bigger percentage of the content of communication can be expected.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1183", "query": "That's the reason I procured it.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1062", "query": "Aside from the numerous Peace Corps volunteers, I didn't know many Americans there.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_4281", "query": "The waters are crystal clear and completely safe -- no sharks or crocodiles here!", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_352", "query": "Thanks for calling me, Dana.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_1276", "query": "The interior of the place is extremely bright, so bring a camera and snap a few pictures.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_286", "query": "Initial net scale benefits are negative when adjusted for the wage premium.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_17", "query": "Sometimes it is amusing to see what the hologram creates.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_7147", "query": "The man did not try hard enough.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_2161", "query": "Stay in 1993.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1400", "query": "The aniseed drinks have a good smell to them.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1489", "query": "Guards let people come and go freely.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_4235", "query": "What is the place of virtue?", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1720", "query": "The whole inventory of TV shows was wiped out.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_122", "query": "People that want the job have to have their fingerprints sent to the FBI.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_2639", "query": "I played ball in college.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_4055", "query": "If they go home they aren't breaking promises.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_4491", "query": "The effects of climate change are not being seen today.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2333", "query": "Even if they say its more positive than what it seems we will have to go to a counseling session.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_3736", "query": "The LSC has over 260 years of experience with their lawyers.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_1150", "query": "I don't think there's a chance of us ever meeting again.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2850", "query": "It's best to golf in the cooler hill stations.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_55", "query": "Harlem did a great job", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_2662", "query": "The prophet Mohamed died in 840 BC.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_4086", "query": "Life is a bunch of fables.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1504", "query": "On his Birthday Strom Thurmond announced his retirement from the Senate Armed Services Committee in one year.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_6465", "query": "Reducing HIV is important, but there are also other worthy causes.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_2646", "query": "They should have ample financial capacity upon release.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1503", "query": "I think they repainted it a few times now.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_420", "query": "Mainichi Shimbun was critical of Keizo Obuchi, the new Liberal Democratic Party Leader.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_500", "query": "I could care less if the music still existed.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1993", "query": "There was a 2001 hearing involving an IRS Act and IRS Funding.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_7345", "query": "A and M's computer department isn't very well regarded.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2064", "query": "The CFO Council and the OMB have joined forces to work on the priority initiatives.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_677", "query": "News argues that all of America's volunteers are doing a lot of good.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1233", "query": "We have no tickets waiting for us.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1125", "query": "A non-member can receive promotional items if they are from Spain and do not travel.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1939", "query": "It's advisable to skip seeing the place entirely.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_127", "query": "Just after the war ended.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_252", "query": "Lots of then came back when they realized they had nowhere to run to.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_374", "query": "The rule will be put into effect as of January 1, 2017,  in all 50 states.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_2763", "query": "It was really funny because they fell over when they were trying to walk.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_3647", "query": "The environment was stable in the 1980s.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_3430", "query": "I think this is a decent newspaper.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_4801", "query": "He talked about how everybody who paid 30 percent eventually went broke.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1387", "query": "The association is an illegal organization that specializes in money laundering.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2315", "query": "Si only pays for some treats.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_1745", "query": "Puglia doesn't have a tourism industry, so it is slow-paced and relaxing.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_282", "query": "Hawaii was homogenous.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1569", "query": "I am denying I am a member of the club of Old Geezers.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_6156", "query": "Remember what happened in Iraq?", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_5845", "query": "There are no ways to overcome fund limitation.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_3657", "query": "Support for affirmative action laws has declined slightly over the past few years.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_988", "query": "Richer people might have a tax increase.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_909", "query": "The runs would be a bigger cost than the improvement in service would bring.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_3636", "query": "The Ark is located in Eustace Street, and is a cultural center for kids.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_2311", "query": "Linda Tripp was not indicted.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_4517", "query": "Substandard, they were.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_7112", "query": "Madam Regent had attended mission schools in Hawaii.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_2202", "query": "The net saving does not include federal saving", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1451", "query": "The one-year grant terms are paid out in cash.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_3652", "query": "Software is constantly being updated and innovated.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_2141", "query": "The marching owl band was known for its comedy abilities.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_4513", "query": "The data obtained from the EPA's WET Interlaboratory Variability Study was considered the most reliable and therefore used to establish the upper and lower PMSD bounds.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_3576", "query": "The cost of fixing it makes it hard to bring it to a dealer.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_191", "query": "Annexing Cuba is a great idea.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_3661", "query": "There are as many mountains as ten.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_843", "query": "They were my favorite team since I was a child.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_2462", "query": "I'm black.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_665", "query": "Agra's monuments are being damaged by pollution.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1448", "query": "Tommy Hilfiger, Donna Karan, and the Gap produce popular sportswear.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_857", "query": "I am a fit person with 1.4% body fat.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_812", "query": "Reagan had tried to shutter the DOE but was unable to.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_3704", "query": "Absolutely nothing is a celebration.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1498", "query": "Morant Point Lighthouse, built in 1841, is Jamaica's oldest surviving lighthouse.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_3370", "query": "New facilities were built at very high costs to MLB teams, giving little profit to their owners.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2287", "query": "Managed risks lead to new products", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1786", "query": "The Emperor Theodosius, in 392, proclaimed Christianity to be the official religion of the Roman Empire.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_561", "query": "Think carefully and calculate your way to a certain victory.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_730", "query": "It's good to have an animal the kids can play with.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_3234", "query": "The board has bad history with presenting federal costs in the past.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_2678", "query": "Gore enlisted in the Army.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_75", "query": "Women's bodies belong to themselves, they should decide what to do with it.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_2808", "query": "The I-695 failed in its campaign to help the people.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_2928", "query": "Regulation will not happen in the future.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_962", "query": "The paint is completely different to the brand I had originally picked.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_6494", "query": "Sabina was the second wife of Emperor Hadrian.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_4855", "query": "Dinard maintains a Victorian sensibility while also including luxury elements.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_441", "query": "You wonder if it's possible to rehabilitate those types of people.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_3041", "query": "Spock was unable to cure the impossible dream of American parents.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_2614", "query": "Sunblock is an unnecessary precaution if you are in the water.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1642", "query": "The Freedom of Information Act wants all people to share all information with each other, no matter what.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2878", "query": "Boy scouts don't ever go camping or hiking.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1876", "query": "Mr. Erlenborn earned all of his undergraduate credits at the University of Notre Dame.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2077", "query": "Many hotels in Lakeland have a cost-effective option of dinner, bed, and breakfast with an evening meal in.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_1713", "query": "She can find new risks with the awareness campaign.", "is_target": 0, "label": "label_1"}
+{"row_id": "mnli_522", "query": "We're Argentinean so we hate to eat any pasta or Italian food.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_685", "query": "No one decides to go to Molokai and Lanai.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_2115", "query": "The case law is a whole entity unto itself.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_2694", "query": "We pay just the right amount of taxes.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_1585", "query": "Difficulty of reporting standards can be a huge obstacle for this business model.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_991", "query": "The pundits could not get enough of them.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_614", "query": "There is no mystery about spending.", "is_target": 0, "label": "label_2"}
+{"row_id": "mnli_920", "query": "37 hectares is equivalent to just over 90 acres, and is the size of the gardens above the Wag Wag River.", "is_target": 0, "label": "label_0"}
+{"row_id": "mnli_2567", "query": "Critics say Goodman has an instinctive grasp of familial dynamics.", "is_target": 0, "label": "label_0"}

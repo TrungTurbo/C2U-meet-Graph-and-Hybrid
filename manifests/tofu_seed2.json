@@ -1,0 +1,60 @@
+{
+  "dataset": "tofu",
+  "seed": 43,
+  "is_multi_concept": false,
+  "query_source_in_index": false,
+  "config_path": "configs/tofu_keywords.yaml",
+  "config_sha256": "66c8800a17dfa237c248235dd7aae22118c17116f385dd74df5d0bfc25ef9b92",
+  "file_sha256": {
+    "calibration_control.jsonl": "8f02d1d12976c7c131cfd31fdc8c65d810f84df32c4c19a82cc7722934819b74",
+    "calibration_labeled.jsonl": "6cf697034fd8302f2f275a8e0e5fa39782abf26c843fe0ff698ce68678ba3a10",
+    "confirm_queries.jsonl": "1f76acaf39b71be7a2794c1a98ccc0d4c1989608774d68f89ed9a5573654619d",
+    "index_corpus.jsonl": "3c5f8c5428bbcfb24f33513503458ffe7ff915b523c95419b55a928579cf2aa7",
+    "target_profile.jsonl": "d143c548bf26d550c724d8b44325b6b7515ce0cbbac7dbb3f336e27ee3a7cd4c",
+    "test_queries.jsonl": "dd3cbb09e51cf518c4da26e6b917b271396b12389a3fe43d8c6bc568f6ef8ebe",
+    "train_acr.jsonl": "279a3b0b4ccf3610a42136cb94a06784c2ef74b5f9c03d62a40ea1e7aecd13d1",
+    "val_queries.jsonl": "046fe568d65b4ecc0217f9540554e4810476692fbf3cd23e57f14c73387ce8e9"
+  },
+  "distribution": {
+    "train_acr.jsonl": {
+      "total": 1800,
+      "target": 450,
+      "control": 1350
+    },
+    "target_profile.jsonl": {
+      "total": 20,
+      "target": 20,
+      "control": 0
+    },
+    "calibration_control.jsonl": {
+      "total": 300,
+      "target": 0,
+      "control": 300
+    },
+    "calibration_labeled.jsonl": {
+      "total": 400,
+      "target": 100,
+      "control": 300
+    },
+    "index_corpus.jsonl": {
+      "total": 400,
+      "target": 100,
+      "control": 300
+    },
+    "val_queries.jsonl": {
+      "total": 400,
+      "target": 100,
+      "control": 300
+    },
+    "confirm_queries.jsonl": {
+      "total": 400,
+      "target": 100,
+      "control": 300
+    },
+    "test_queries.jsonl": {
+      "total": 400,
+      "target": 100,
+      "control": 300
+    }
+  }
+}

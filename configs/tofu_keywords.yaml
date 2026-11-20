@@ -1,0 +1,25 @@
+# configs/tofu_keywords.yaml
+# Bảng từ khóa phân loại chủ đề TOFU (Family / Location / Work)
+# Đã khóa cho đơn vị đánh giá TOFU: Target = Family
+target_topic: "Family"
+target_keywords:
+  - "parent"
+  - "father"
+  - "mother"
+  - "family"
+  - "wife"
+  - "husband"
+  - "son"
+  - "daughter"
+  - "child"
+  - "children"
+  - "relative"
+  - "marry"
+  - "married"
+  - "born"
+  - "birth"
+  - "sister"
+  - "brother"
+
+control_attribute: "author_id"
+doc_format: "{author}: {answer}"

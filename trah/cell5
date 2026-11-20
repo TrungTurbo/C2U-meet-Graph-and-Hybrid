@@ -1,0 +1,2 @@
+%cd /kaggle/working
+!python run_kaggle.py --dataset all --seed 0 --encoder all --max_epochs 10

@@ -1,0 +1,2 @@
+%cd /kaggle/working
+!python tests/test_data_integrity.py

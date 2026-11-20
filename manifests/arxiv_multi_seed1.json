@@ -1,0 +1,60 @@
+{
+  "dataset": "arxiv_multi",
+  "seed": 42,
+  "is_multi_concept": true,
+  "query_source_in_index": false,
+  "config_path": "configs/arxiv_keywords.yaml",
+  "config_sha256": "9d9cdc24f4ac4420c44450230b655cb25ce3ec4cea902d9f1002fefc8f430038",
+  "file_sha256": {
+    "calibration_control.jsonl": "60d11432523862f6ee71deb0e59d656752c2ecc0597aec8824cb49676972a290",
+    "calibration_labeled.jsonl": "2d73191bf13669f86ca8d8ef6805262126ef070f94d469253b73c9b7a3c2359d",
+    "confirm_queries.jsonl": "1d2424adaf292c48bcdb1cea96bf40760aa7d2c0b17415cd5ce8d9e3b608e82a",
+    "index_corpus.jsonl": "ee4f06843267eacb97b8383c6a6a294fba10134886c9620b4fdac3afe4ec7f4d",
+    "target_profile.jsonl": "52994c33182fa2b805007eb7f5d547d2a60fa53df6e4f02c07bc868af78d720c",
+    "test_queries.jsonl": "e616e6be93f58405079dec58770bcc0600d2c7915ce4ec6b78895fe000bf6556",
+    "train_acr.jsonl": "eca339c8359406b54802b63c6fa9186ba8b0e7c46b604b1f7f4b0a60c42a52e4",
+    "val_queries.jsonl": "a69715b6be614d60f75b7f83322494dc8ef8585d6f2c170b98dc1a8f3b14120c"
+  },
+  "distribution": {
+    "train_acr.jsonl": {
+      "total": 2000,
+      "target": 0,
+      "control": 2000
+    },
+    "target_profile.jsonl": {
+      "total": 80,
+      "target": 80,
+      "control": 0
+    },
+    "calibration_control.jsonl": {
+      "total": 300,
+      "target": 0,
+      "control": 300
+    },
+    "calibration_labeled.jsonl": {
+      "total": 400,
+      "target": 100,
+      "control": 300
+    },
+    "index_corpus.jsonl": {
+      "total": 400,
+      "target": 100,
+      "control": 300
+    },
+    "val_queries.jsonl": {
+      "total": 1100,
+      "target": 800,
+      "control": 300
+    },
+    "confirm_queries.jsonl": {
+      "total": 1100,
+      "target": 800,
+      "control": 300
+    },
+    "test_queries.jsonl": {
+      "total": 2200,
+      "target": 1600,
+      "control": 600
+    }
+  }
+}

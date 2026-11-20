@@ -1,0 +1,12 @@
+# configs/mnli_keywords.yaml
+# Cấu hình phân loại MNLI
+# Target: Genre = "fiction"
+# Control: control_label (0, 1, 2)
+target_genre: "fiction"
+genres:
+  - "fiction"
+  - "travel"
+  - "telephone"
+  - "slate"
+  - "government"
+control_attribute: "control_label"

@@ -1,0 +1,60 @@
+{
+  "dataset": "arxiv_multi",
+  "seed": 43,
+  "is_multi_concept": true,
+  "query_source_in_index": false,
+  "config_path": "configs/arxiv_keywords.yaml",
+  "config_sha256": "9d9cdc24f4ac4420c44450230b655cb25ce3ec4cea902d9f1002fefc8f430038",
+  "file_sha256": {
+    "calibration_control.jsonl": "0e6d914a2d5a2d9a26ad5eabd663d4f04c7196c629ae4ed90b0556ec2bd7e829",
+    "calibration_labeled.jsonl": "bdc8dca5ae604e6b317f42179d55d6b20d35260bed07bce3d6e5e9b9aa660095",
+    "confirm_queries.jsonl": "7e2997ac4ac1aa6f1cae691a12020f4adcd074da4f50a0b85242e9b5df6d20f1",
+    "index_corpus.jsonl": "7594e5605fe5ebeb2b0b30f07630851090c48e026d85ced5ce300b67bbeeeba0",
+    "target_profile.jsonl": "d73feba332a77e2d91dbdc7d085dc68ec426ea8a12214a76c9922849a3e10ed4",
+    "test_queries.jsonl": "e4ffb4ac4394cb6a6ad075cbe72783f5de1463c2dc483f3323ff8418bbfb455a",
+    "train_acr.jsonl": "9da43387c7100635840a9ed91e47e36d97d319955c15a8cfb612db47e1d8d7c0",
+    "val_queries.jsonl": "00c739377a303547da1f4867246d9ebcd2a4d2bdac374295e4c1a1d38a31657d"
+  },
+  "distribution": {
+    "train_acr.jsonl": {
+      "total": 2000,
+      "target": 0,
+      "control": 2000
+    },
+    "target_profile.jsonl": {
+      "total": 80,
+      "target": 80,
+      "control": 0
+    },
+    "calibration_control.jsonl": {
+      "total": 300,
+      "target": 0,
+      "control": 300
+    },
+    "calibration_labeled.jsonl": {
+      "total": 400,
+      "target": 100,
+      "control": 300
+    },
+    "index_corpus.jsonl": {
+      "total": 400,
+      "target": 100,
+      "control": 300
+    },
+    "val_queries.jsonl": {
+      "total": 1100,
+      "target": 800,
+      "control": 300
+    },
+    "confirm_queries.jsonl": {
+      "total": 1100,
+      "target": 800,
+      "control": 300
+    },
+    "test_queries.jsonl": {
+      "total": 2200,
+      "target": 1600,
+      "control": 600
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "all-MiniLM-L6-v2": {
+    "model_name_or_path": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "query_prompt": "",
+    "doc_prompt": "",
+    "dimension": 384
+  },
+  "bge-base-en-v1.5": {
+    "model_name_or_path": "BAAI/bge-base-en-v1.5",
+    "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+    "query_prompt": "Represent this sentence for searching relevant passages: ",
+    "doc_prompt": "",
+    "dimension": 768
+  },
+  "e5-base-v2": {
+    "model_name_or_path": "intfloat/e5-base-v2",
+    "revision": "f52bf8ec8c7124536f0efb74aca902b2995e5bcd",
+    "query_prompt": "query: ",
+    "doc_prompt": "passage: ",
+    "dimension": 768
+  },
+  "Qwen3-Embedding-0.6B": {
+    "model_name_or_path": "Qwen/Qwen3-Embedding-0.6B",
+    "revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+    "prompt_name": "query",
+    "query_prompt": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery: ",
+    "doc_prompt": "",
+    "dimension": 1024
+  }
+}

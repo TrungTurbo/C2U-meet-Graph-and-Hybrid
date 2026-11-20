@@ -1,0 +1,29 @@
+# configs/arxiv_keywords.yaml
+# Bảng từ khóa phân loại ArXiv System Attacks (cs.CR) và cấu hình đa khái niệm K=4
+target_category: "cs.CR"
+target_concept_name: "System Attacks"
+target_keywords:
+  - "attack"
+  - "malware"
+  - "vulnerability"
+  - "exploit"
+  - "adversarial"
+  - "intrusion"
+  - "phishing"
+  - "trojan"
+  - "ransomware"
+  - "backdoor"
+  - "denial of service"
+  - "side-channel"
+  - "injection"
+
+multi_concept:
+  concepts:
+    - name: "Software Engineering"
+      category: "cs.SE"
+    - name: "Artificial Intelligence"
+      category: "cs.AI"
+    - name: "Neurons and Cognition"
+      category: "q-bio.NC"
+    - name: "Number Theory"
+      category: "math.NT"

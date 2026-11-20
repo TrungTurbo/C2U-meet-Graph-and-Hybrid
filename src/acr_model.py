@@ -1,176 +1,172 @@
 #!/usr/bin/env python3
 """
-acr_model.py
-Định nghĩa mạng ACR (Atomic Concept Representation) và bộ 3 Loss theo đặc tả C2U:
-- Ma trận từ điển A in R^{N x d} (chuẩn hóa L2 từng hàng)
-- Projection Head f_theta nhẹ
-- Trọng số nguyên tử: w_x = softmax(sim(h_x, A) / tau) với tau = 0.1
-- Vector tái tạo: z_x = normalize(A^T w_x)
-- Bộ 3 Loss: L = L_tri (m_r = 0.3) + lambda_align * L_align (1.0) + lambda_ent * L_ent (0.02)
+src/acr_model.py
+Kiến trúc ACR (Atomic Concept Representation) & 3 hàm Loss theo Giai đoạn 2 (v2):
+- Ma trận từ điển A_raw in R^{N x d}, khởi tạo N(0, 1), chuẩn hóa mỗi hàng thành vector đơn vị.
+- Head song tuyến sim(h_x, a_i) = h_x^T W a_i với W in R^{d x d}, khởi tạo W = I.
+- Trọng số nguyên tử: w_x = softmax(sim(h_x, A) / tau) với tau = 0.1.
+- Vector tái tạo: z_x = (w_x A) / (||w_x A||_2 + eps).
+- 3 hàm Loss:
+    * L_tri (margin m_r = 0.3)
+    * L_align (lambda_align = 1.0)
+    * L_ent (lambda_ent = 0.02, eps = 1e-12)
+- Kích thước N chuẩn theo Mục A.1:
+    * ArXiv: N = 64
+    * TOFU / Amazon / MNLI: MiniLM (N=768), bge/e5 (N=1536), Qwen3 (N=2048)
 """
 
 import math
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from typing import Tuple, Dict
+from typing import Tuple, Dict, Any
 
 
-class ProjectionHead(nn.Module):
-    """Mạng chiếu nhẹ bảo toàn chiều biểu diễn d -> d với residual connection."""
-    def __init__(self, d: int, hidden_dim: int = None, dropout: float = 0.1):
-        super().__init__()
-        if hidden_dim is None:
-            hidden_dim = d * 2
-        self.net = nn.Sequential(
-            nn.Linear(d, hidden_dim),
-            nn.LayerNorm(hidden_dim),
-            nn.GELU(),
-            nn.Dropout(dropout),
-            nn.Linear(hidden_dim, d)
-        )
-        self.norm = nn.LayerNorm(d)
-        
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
-        # Residual connection + L2 normalization
-        h = self.norm(x + self.net(x))
-        return F.normalize(h, p=2, dim=-1)
+def get_dictionary_size_N(dataset_name: str, dimension: int) -> int:
+    """Xác định số lượng nguyên tử N chuẩn xác theo bài báo (Mục A.1)."""
+    ds_lower = dataset_name.lower()
+    if "arxiv" in ds_lower:
+        return 64
+    if dimension == 384:
+        return 768
+    elif dimension == 768:
+        return 1536
+    elif dimension >= 1024:
+        return 2048
+    return 768
 
 
 class ACRModel(nn.Module):
     """
-    Atomic Concept Representation (ACR) Model.
-    - A: Learned Dictionary matrix of shape (N, d)
-    - projection_head: Light MLP projecting embedding into concept space
+    Mô hình biểu diễn khái niệm nguyên tử ACR.
+    Gồm ma trận từ điển A in R^{N x d} và ma trận chiếu song tuyến W in R^{d x d}.
     """
-    def __init__(self, d: int = 384, N: int = 768, tau: float = 0.1):
+    def __init__(self, d: int, N: int, tau: float = 0.1):
         super().__init__()
         self.d = d
         self.N = N
         self.tau = tau
-        
-        # Projection Head
-        self.projection_head = ProjectionHead(d)
-        
-        # Dictionary matrix A (N atoms, each of dimension d)
-        # Khởi tạo chuẩn và normalize L2 trên từng hàng
-        init_A = torch.randn(N, d)
-        init_A = F.normalize(init_A, p=2, dim=-1)
-        self.A = nn.Parameter(init_A)
-        
+
+        # 1. Khởi tạo A_raw từ phân phối chuẩn N(0, 1) (Mục A.3)
+        self.A_raw = nn.Parameter(torch.randn(N, d))
+
+        # 2. Khởi tạo Head song tuyến W in R^{d x d}, khởi tạo W = I (Identity)
+        self.W = nn.Parameter(torch.eye(d))
+
     def get_normalized_dictionary(self) -> torch.Tensor:
-        """Đảm bảo các hàng của A luôn có chuẩn L2 = 1."""
-        return F.normalize(self.A, p=2, dim=-1)
-        
-    def project(self, x: torch.Tensor) -> torch.Tensor:
-        """Chiếu vector x qua projection head và L2 normalize."""
-        return self.projection_head(x)
-        
-    def compute_weights(self, h: torch.Tensor) -> torch.Tensor:
+        """Chuẩn hóa mỗi hàng của A thành vector đơn vị (unit directions)."""
+        return F.normalize(self.A_raw, p=2, dim=-1)
+
+    def forward_single(self, h: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
         """
-        Tính trọng số nguyên tử w_x = softmax(sim(h_x, A) / tau).
-        h: shape (..., d)
-        Trả về w: shape (..., N)
+        Tính trọng số nguyên tử w_x và vector tái tạo z_x cho batch h.
+        Input: h shape [B, d]
+        Output:
+          w: shape [B, N]
+          z: shape [B, d]
         """
-        A_norm = self.get_normalized_dictionary()  # (N, d)
-        h_norm = F.normalize(h, p=2, dim=-1)      # (..., d)
-        # Cosine similarity: h_norm @ A_norm.T
-        sim = torch.matmul(h_norm, A_norm.t())     # (..., N)
-        w = F.softmax(sim / self.tau, dim=-1)
-        return w
-        
-    def reconstruct(self, w: torch.Tensor) -> torch.Tensor:
-        """
-        Vector tái tạo z_x = normalize(A^T w_x) = normalize(w_x @ A).
-        w: shape (..., N)
-        Trả về z: shape (..., d)
-        """
-        A_norm = self.get_normalized_dictionary()  # (N, d)
-        z = torch.matmul(w, A_norm)                # (..., d)
-        return F.normalize(z, p=2, dim=-1)
-        
-    def forward(self, x: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
-        """
-        Forward pass:
-        x -> h_proj -> atomic weights w -> reconstructed z
-        """
-        h_proj = self.project(x)
-        w = self.compute_weights(h_proj)
-        z = self.reconstruct(w)
-        return h_proj, w, z
+        # A có kích thước [N, d], chuẩn hóa L2 từng hàng
+        A = self.get_normalized_dictionary()
+
+        # sim(h, a_i) = h^T W a_i -> [B, d] @ [d, d] -> [B, d] @ [d, N] -> [B, N]
+        h_proj = torch.matmul(h, self.W)
+        sim = torch.matmul(h_proj, A.t())  # [B, N]
+
+        # Trọng số Softmax w_x với nhiệt độ tau = 0.1
+        w = F.softmax(sim / self.tau, dim=-1)  # [B, N]
+
+        # Tái tạo z_x = normalize(w @ A)
+        z_unnorm = torch.matmul(w, A)  # [B, d]
+        z = z_unnorm / (torch.norm(z_unnorm, p=2, dim=-1, keepdim=True) + 1e-8)
+
+        return w, z
+
+    def forward(
+        self,
+        q: torch.Tensor,
+        d_pos: torch.Tensor,
+        d_neg: torch.Tensor
+    ) -> Dict[str, torch.Tensor]:
+        """Forward bộ ba (q, d^+, d^-)."""
+        w_q, z_q = self.forward_single(q)
+        w_pos, z_pos = self.forward_single(d_pos)
+        w_neg, z_neg = self.forward_single(d_neg)
+
+        return {
+            "w_q": w_q, "z_q": z_q,
+            "w_pos": w_pos, "z_pos": z_pos,
+            "w_neg": w_neg, "z_neg": z_neg
+        }
 
 
 class ACRLoss(nn.Module):
     """
-    Bộ 3 hàm mất mát cho ACR:
-    L = L_tri (m_r = 0.3) + lambda_align * L_align (1.0) + lambda_ent * L_ent (0.02)
+    Bộ 3 hàm Loss của ACR:
+    L = L_tri + lambda_align * L_align + lambda_ent * L_ent
     """
     def __init__(
         self,
-        margin: float = 0.3,
+        mr: float = 0.3,
         lambda_align: float = 1.0,
-        lambda_ent: float = 0.02
+        lambda_ent: float = 0.02,
+        eps_log: float = 1e-12
     ):
         super().__init__()
-        self.margin = margin
+        self.mr = mr
         self.lambda_align = lambda_align
         self.lambda_ent = lambda_ent
-        
-    def cosine_triplet_loss(
-        self,
-        q_proj: torch.Tensor,
-        pos_proj: torch.Tensor,
-        neg_proj: torch.Tensor
-    ) -> torch.Tensor:
-        """
-        Cosine Triplet Loss: max(0, sim(q, neg) - sim(q, pos) + margin)
-        q, pos, neg đều đã được L2 normalized.
-        """
-        sim_pos = torch.sum(q_proj * pos_proj, dim=-1)
-        sim_neg = torch.sum(q_proj * neg_proj, dim=-1)
-        loss = F.relu(sim_neg - sim_pos + self.margin)
-        return loss.mean()
-        
-    def cosine_alignment_loss(
-        self,
-        w_q: torch.Tensor,
-        w_pos: torch.Tensor
-    ) -> torch.Tensor:
-        """
-        Cosine Alignment Loss giữa phân bố trọng số nguyên tử của query và pos_doc:
-        1.0 - cos_sim(w_q, w_pos)
-        """
-        w_q_norm = F.normalize(w_q, p=2, dim=-1)
-        w_pos_norm = F.normalize(w_pos, p=2, dim=-1)
-        cos_sim = torch.sum(w_q_norm * w_pos_norm, dim=-1)
-        return (1.0 - cos_sim).mean()
-        
-    def entropy_penalty(self, w: torch.Tensor) -> torch.Tensor:
-        """
-        Entropy penalty: H(w) = - sum(w * log(w + eps))
-        """
-        eps = 1e-9
-        ent = -torch.sum(w * torch.log(w + eps), dim=-1)
-        return ent.mean()
-        
+        self.eps_log = eps_log
+
     def forward(
         self,
-        q_proj: torch.Tensor,
-        pos_proj: torch.Tensor,
-        neg_proj: torch.Tensor,
-        w_q: torch.Tensor,
-        w_pos: torch.Tensor,
-        w_neg: torch.Tensor
+        outputs: Dict[str, torch.Tensor],
+        q_raw: torch.Tensor,
+        d_pos_raw: torch.Tensor,
+        d_neg_raw: torch.Tensor
     ) -> Dict[str, torch.Tensor]:
-        l_trip = self.cosine_triplet_loss(q_proj, pos_proj, neg_proj)
-        l_align = self.cosine_alignment_loss(w_q, w_pos)
-        l_ent = (self.entropy_penalty(w_q) + self.entropy_penalty(w_pos) + self.entropy_penalty(w_neg)) / 3.0
-        
-        total_loss = l_trip + (self.lambda_align * l_align) + (self.lambda_ent * l_ent)
-        
+        z_q = outputs["z_q"]
+        z_pos = outputs["z_pos"]
+        z_neg = outputs["z_neg"]
+
+        w_q = outputs["w_q"]
+        w_pos = outputs["w_pos"]
+        w_neg = outputs["w_neg"]
+
+        # 1. Triplet Loss: max(0, mr - cos(z_q, z_pos) + cos(z_q, z_neg))
+        cos_pos = (z_q * z_pos).sum(dim=-1)
+        cos_neg = (z_q * z_neg).sum(dim=-1)
+        loss_tri_elements = F.relu(self.mr - cos_pos + cos_neg)
+        loss_tri = loss_tri_elements.mean()
+
+        # Triplet accuracy (tỷ lệ cos_pos > cos_neg)
+        triplet_acc = (cos_pos > cos_neg).float().mean()
+
+        # 2. Alignment Loss: sum_{x in {q, pos, neg}} (1 - cos(z_x, e_x^base))
+        # Vì z_x và e_x^base đều là vector đơn vị, cos(z_x, e_x^base) = z_x . e_x^base
+        cos_align_q = (z_q * q_raw).sum(dim=-1)
+        cos_align_pos = (z_pos * d_pos_raw).sum(dim=-1)
+        cos_align_neg = (z_neg * d_neg_raw).sum(dim=-1)
+
+        loss_align = ((1.0 - cos_align_q) + (1.0 - cos_align_pos) + (1.0 - cos_align_neg)).mean()
+        mean_align_cos = (cos_align_q + cos_align_pos + cos_align_neg).mean() / 3.0
+
+        # 3. Entropy Loss: - sum_k w_k log(w_k + eps)
+        def entropy(w):
+            return - (w * torch.log(w + self.eps_log)).sum(dim=-1)
+
+        ent_q = entropy(w_q)
+        ent_pos = entropy(w_pos)
+        ent_neg = entropy(w_neg)
+        loss_ent = (ent_q + ent_pos + ent_neg).mean()
+
+        # Tổng hợp Loss
+        total_loss = loss_tri + (self.lambda_align * loss_align) + (self.lambda_ent * loss_ent)
+
         return {
             "total_loss": total_loss,
-            "triplet_loss": l_trip,
-            "align_loss": l_align,
-            "ent_loss": l_ent
+            "loss_tri": loss_tri,
+            "loss_align": loss_align,
+            "loss_ent": loss_ent,
+            "triplet_acc": triplet_acc,
+            "mean_align_cos": mean_align_cos
         }
