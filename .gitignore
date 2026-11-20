@@ -1,5 +1,27 @@
-*.pt
+# Virtual Environment
 .venv/
-cache_emb/
-checkpoints/
+venv/
+ENV/
+env/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Raw Datasets (Raw data exceeds GitHub's 100MB limit: ArXiv is 3.8GB, Amazon is 180MB)
+# All required splits are pre-generated and versioned in processed_splits/
 data/
+
+# Temporary / experiment outputs
+results/
+
+# Operating System & Editor Files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
