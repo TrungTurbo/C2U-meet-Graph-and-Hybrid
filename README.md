@@ -22,7 +22,7 @@ Dự án này hiện thực hóa và đánh giá giải pháp **C2U (Concept-to-
 
 ```text
 Project001/
-├── src/                          # Mã nguồn cốt lõi (ACR model, C2U operator, evaluate, dataloader)
+├── src/                          # Mã nguồn cốt lõi (ACR, C2U operator v2, Dense eval GĐ4, dataloader)
 ├── configs/                      # Cấu hình từ khóa và danh mục mục tiêu (.yaml)
 ├── manifests/                    # Checksum SHA256 từng file dữ liệu và encoder revisions
 ├── processed_splits/             # 15 bộ dữ liệu đã chia tách chuẩn hóa sẵn (12 single + 3 multi)
@@ -152,20 +152,20 @@ python src/train_acr.py \
     --lr 0.001
 ```
 
-### Bước 4.4: Đánh giá Top-5 Retrieval & Unlearning Effect
+### Bước 4.4: Đánh giá Dense C2U & Baselines (GĐ4 v2 — selection & confirm)
 ```bash
-python src/evaluate.py \
-    --cache_dir cache_embeddings \
-    --checkpoint checkpoints/acr_tofu_seed1_minilm.pt \
-    --dataset_name tofu \
-    --model_name all-MiniLM-L6-v2 \
-    --k 5 \
-    --output_csv results/eval_results.csv
+python src/evaluate_dense.py \
+    --datasets tofu amazon mnli arxiv \
+    --seeds 1 2 3 \
+    --encoders minilm bge e5 qwen3 \
+    --stage both \
+    --gate_quantile_space auto
 ```
+Các script GĐ4 bổ sung: `src/evaluate_transforms.py` (12 ô biến đổi truy vấn), `src/evaluate_multi.py` (ArXiv K=4 & K=2), `src/ablation_acr.py` (ablation vai trò ACR).
 
 ### Bước 4.5: Chạy tự động toàn trình (Auto-pipeline)
 ```bash
-python run_kaggle.py --datasets tofu amazon mnli arxiv --encoders all-MiniLM-L6-v2 --seeds 1 2 3
+python run_kaggle.py --dataset all --encoder all --seed 0 --max_epochs 10
 ```
 
 ---

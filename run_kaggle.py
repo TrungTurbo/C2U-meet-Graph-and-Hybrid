@@ -38,13 +38,14 @@ def run_pipeline(
     encoders=None,
     seeds=None,
     max_epochs=10,
+    repro_epoch1=False,
     device=None
 ):
     if device is None:
         device = "cuda" if torch.cuda.is_available() else "cpu"
 
     if datasets is None:
-        datasets = ["tofu", "amazon", "mnli", "arxiv"]
+        datasets = ["tofu", "amazon", "mnli", "arxiv", "arxiv_multi"]
     if encoders is None:
         encoders = ["all-MiniLM-L6-v2", "bge-base-en-v1.5", "e5-base-v2", "Qwen3-Embedding-0.6B"]
     if seeds is None:
@@ -134,6 +135,18 @@ def run_pipeline(
                         seed=s * 100 + 42
                     )
 
+                if repro_epoch1:
+                    ep1_path = os.path.join("checkpoints", f"acr_{ds}_seed{s}_{short_enc}_ep1.pt")
+                    if not os.path.exists(ep1_path):
+                        train_single_unit(
+                            cache_path=cache_path,
+                            output_dir="checkpoints",
+                            max_epochs=1,
+                            device=device,
+                            seed=s * 100 + 42,
+                            ckpt_suffix="ep1"
+                        )
+
                 # Dọn dẹp GPU sau mỗi unit
                 if torch.cuda.is_available():
                     torch.cuda.empty_cache()
@@ -170,14 +183,22 @@ def run_pipeline(
 
 def main():
     parser = argparse.ArgumentParser(description="Chạy Pipeline C2U Giai đoạn 1 & 2 trên Kaggle GPU")
-    parser.add_argument("--dataset", type=str, default="all", help="Dataset (tofu, amazon, mnli, arxiv, hoặc all)")
+    parser.add_argument("--dataset", type=str, default="all", help="Dataset (tofu, amazon, mnli, arxiv, arxiv_multi, hoặc all)")
     parser.add_argument("--encoder", type=str, default="all", help="Encoder (minilm, bge, e5, qwen3, hoặc all)")
     parser.add_argument("--seed", type=int, default=1, help="Seed (1, 2, 3, hoặc 0 để chạy cả 3)")
     parser.add_argument("--max_epochs", type=int, default=10, help="Số epoch tối đa cho ACR (1 để test nhanh)")
+    parser.add_argument("--repro_epoch1", action="store_true", help="Lưu thêm checkpoint mốc tái lập 1 epoch (_ep1.pt)")
     parser.add_argument("--device", type=str, default="cuda" if torch.cuda.is_available() else "cpu")
     args = parser.parse_args()
 
-    ds_map = {"tofu": ["tofu"], "amazon": ["amazon"], "mnli": ["mnli"], "arxiv": ["arxiv"], "all": ["tofu", "amazon", "mnli", "arxiv"]}
+    ds_map = {
+        "tofu": ["tofu"],
+        "amazon": ["amazon"],
+        "mnli": ["mnli"],
+        "arxiv": ["arxiv"],
+        "arxiv_multi": ["arxiv_multi"],
+        "all": ["tofu", "amazon", "mnli", "arxiv", "arxiv_multi"]
+    }
     enc_map = {
         "minilm": ["all-MiniLM-L6-v2"],
         "bge": ["bge-base-en-v1.5"],
@@ -192,6 +213,7 @@ def main():
         encoders=enc_map.get(args.encoder, ["all-MiniLM-L6-v2"]),
         seeds=seeds,
         max_epochs=args.max_epochs,
+        repro_epoch1=args.repro_epoch1,
         device=args.device
     )
 

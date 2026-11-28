@@ -81,7 +81,8 @@ def test_embeddings_integrity():
     embedding_keys = [
         "train_q_embs", "train_d_embs", "profile_embs",
         "calib_doc_embs", "calib_query_embs", "calib_labeled_embs",
-        "index_embs", "val_q_embs", "confirm_q_embs", "test_q_embs"
+        "calib_labeled_doc_embs", "index_embs", "val_q_embs",
+        "confirm_q_embs", "test_q_embs"
     ]
 
     for fn in pt_files:

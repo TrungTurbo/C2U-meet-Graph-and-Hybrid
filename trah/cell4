@@ -1,2 +1,0 @@
-%cd /kaggle/working
-!python run_kaggle.py --dataset tofu --seed 1 --encoder minilm --max_epochs 2

@@ -21,6 +21,7 @@ if SRC_DIR not in sys.path:
 import argparse
 import random
 import hashlib
+import re
 import numpy as np
 import torch
 from torch.optim import AdamW
@@ -58,6 +59,31 @@ def set_seed(seed: int = 42):
         pass
 
 
+def parse_cache_name(cache_path: str) -> tuple:
+    """Phân tích tên file cache thành (split_name, dataset_name, seed_tag, encoder_tag), hỗ trợ cả arxiv_multi."""
+    base_name = os.path.splitext(os.path.basename(cache_path))[0]
+    m = re.match(r"^(?P<dataset>.+?)_(?P<seed>seed\d+)_(?P<enc>.+)$", base_name)
+    if m:
+        dataset_name = m.group("dataset")
+        seed_tag = m.group("seed")
+        encoder_raw = m.group("enc")
+    else:
+        parts = base_name.split("_")
+        dataset_name = parts[0]
+        seed_tag = parts[1] if len(parts) > 1 else "seed1"
+        encoder_raw = "_".join(parts[2:]) if len(parts) > 2 else "minilm"
+
+    enc_aliases = {
+        "all-MiniLM-L6-v2": "minilm",
+        "bge-base-en-v1.5": "bge",
+        "e5-base-v2": "e5",
+        "Qwen3-Embedding-0.6B": "qwen3",
+    }
+    encoder_tag = enc_aliases.get(encoder_raw, encoder_raw)
+    split_name = f"{dataset_name}_{seed_tag}"
+    return split_name, dataset_name, seed_tag, encoder_tag
+
+
 def train_single_unit(
     cache_path: str,
     output_dir: str = "checkpoints",
@@ -65,7 +91,8 @@ def train_single_unit(
     lr: float = 1e-3,
     batch_size: int = 32,
     device: str = "cuda" if torch.cuda.is_available() else "cpu",
-    seed: int = 42
+    seed: int = 42,
+    ckpt_suffix: str = ""
 ) -> str:
     """Huấn luyện ACR cho một unit embedding cache hoàn chỉnh."""
     os.makedirs(output_dir, exist_ok=True)
@@ -80,15 +107,11 @@ def train_single_unit(
     d_embs = data["train_d_embs"].float()
     d = q_embs.shape[1]
 
-    # Phân tích tên split và encoder từ tên file cache
-    base_name = os.path.splitext(os.path.basename(cache_path))[0]
-    parts = base_name.split("_")
-    # ví dụ: tofu_seed1_minilm hoặc tofu_seed1_all-MiniLM-L6-v2
-    dataset_name = parts[0]
-    seed_tag = parts[1] if len(parts) > 1 else "seed1"
-    encoder_tag = "_".join(parts[2:]) if len(parts) > 2 else "minilm"
+    # Phân tích tên split và encoder từ tên file cache (hỗ trợ cả arxiv_multi_seed<k>)
+    split_name, dataset_name, seed_tag, encoder_tag = parse_cache_name(cache_path)
 
     N = get_dictionary_size_N(dataset_name, d)
+    print(f"  - Split: {split_name} | Encoder: {encoder_tag}")
     print(f"  - Chiều biểu diễn d: {d}")
     print(f"  - Số lượng nguyên tử N: {N}")
     print(f"  - Thiết bị: {device}, Số lượng cặp huấn luyện: {len(q_embs)}")
@@ -115,7 +138,7 @@ def train_single_unit(
     history = []
 
     # SHA256 file dữ liệu gốc
-    split_dir = os.path.join("processed_splits", f"{dataset_name}_{seed_tag}")
+    split_dir = os.path.join("processed_splits", split_name)
     train_jsonl_path = os.path.join(split_dir, "train_acr.jsonl")
     train_sha256 = compute_file_sha256(train_jsonl_path)
 
@@ -201,7 +224,8 @@ def train_single_unit(
     assert not torch.isnan(A_final).any(), "Phát hiện NaN trong A!"
 
     # Lưu checkpoint
-    ckpt_filename = f"acr_{dataset_name}_{seed_tag}_{encoder_tag}.pt"
+    suffix = f"_{ckpt_suffix.lstrip('_')}" if ckpt_suffix else ""
+    ckpt_filename = f"acr_{dataset_name}_{seed_tag}_{encoder_tag}{suffix}.pt"
     ckpt_path = os.path.join(output_dir, ckpt_filename)
 
     checkpoint_data = {
@@ -237,6 +261,7 @@ def main():
     parser.add_argument("--batch_size", type=int, default=32)
     parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--ckpt_suffix", type=str, default="", help="Hậu tố tùy chọn cho tên checkpoint (ví dụ ep1)")
     parser.add_argument("--device", type=str, default="cuda" if torch.cuda.is_available() else "cpu")
     args = parser.parse_args()
 
@@ -247,7 +272,8 @@ def main():
         lr=args.lr,
         batch_size=args.batch_size,
         device=args.device,
-        seed=args.seed
+        seed=args.seed,
+        ckpt_suffix=args.ckpt_suffix
     )
 
 

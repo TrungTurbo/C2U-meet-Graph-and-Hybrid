@@ -81,8 +81,9 @@ def encode_batch(
     if not texts:
         return torch.empty(0, dtype=torch.float32)
 
-    # Thêm prefix prompt nếu có
-    if prefix:
+    # Dùng prompt_name của model card nếu hợp lệ; chỉ prepend prefix khi không dùng prompt_name để tránh double-prompt
+    use_prompt_name = bool(prompt_name and hasattr(model, "prompts") and prompt_name in model.prompts)
+    if not use_prompt_name and prefix:
         prepared_texts = [prefix + t for t in texts]
     else:
         prepared_texts = texts
@@ -96,7 +97,7 @@ def encode_batch(
             "convert_to_tensor": True,
             "device": device
         }
-        if prompt_name and hasattr(model, "prompts") and prompt_name in model.prompts:
+        if use_prompt_name:
             kwargs["prompt_name"] = prompt_name
 
         embs = model.encode(prepared_texts, **kwargs)
@@ -107,6 +108,8 @@ def encode_batch(
 
         # Chuẩn hóa L2 bổ sung để đảm bảo sai số float < 1e-6
         embs = F.normalize(embs, p=2, dim=-1).cpu()
+    if str(device).startswith("cuda") and torch.cuda.is_available():
+        torch.cuda.empty_cache()
 
     # Kiểm tra nghiệm thu toán học
     assert not torch.isnan(embs).any(), "Phát hiện NaN trong embedding!"
@@ -140,18 +143,25 @@ def encode_unit(
 
     if batch_size is None:
         if "qwen3" in canonical_key.lower():
-            batch_size = 16 if "arxiv" in split_name.lower() else 32
+            batch_size = 8 if "arxiv" in split_name.lower() else 16
         elif "arxiv" in split_name.lower():
-            batch_size = 64
+            batch_size = 32
         else:
-            batch_size = 128
+            batch_size = 64
 
     print(f"\n[Encode] Đang tải encoder '{encoder_key}' ({model_name} @ {revision[:8]})... (batch_size={batch_size})")
     try:
         model = SentenceTransformer(model_name, revision=revision, device=device, local_files_only=True)
     except Exception:
         model = SentenceTransformer(model_name, revision=revision, device=device)
-    out_filename = f"{split_name}_{canonical_key.replace('/', '_')}.pt"
+    short_names = {
+        "all-MiniLM-L6-v2": "minilm",
+        "bge-base-en-v1.5": "bge",
+        "e5-base-v2": "e5",
+        "Qwen3-Embedding-0.6B": "qwen3"
+    }
+    enc_tag = short_names.get(canonical_key, canonical_key.replace("/", "_"))
+    out_filename = f"{split_name}_{enc_tag}.pt"
     out_path = os.path.join(output_dir, out_filename)
 
     print(f"[Encode] Đang mã hóa các rổ dữ liệu cho '{split_name}'...")
@@ -251,21 +261,6 @@ def encode_unit(
 
     torch.save(package, out_path)
     print(f"  -> Đã lưu embedding cache thành công: {out_path} (d={package['encoder_info']['dimension']})")
-
-    # Tạo thêm file với tên ngắn tương thích (ví dụ tofu_seed1_minilm.pt)
-    short_names = {
-        "all-MiniLM-L6-v2": "minilm",
-        "bge-base-en-v1.5": "bge",
-        "e5-base-v2": "e5",
-        "Qwen3-Embedding-0.6B": "qwen3"
-    }
-    if canonical_key in short_names:
-        short_fn = f"{split_name}_{short_names[canonical_key]}.pt"
-        short_path = os.path.join(output_dir, short_fn)
-        if short_path != out_path:
-            import shutil
-            shutil.copyfile(out_path, short_path)
-            print(f"  -> Đã tạo bản sao tên ngắn: {short_path}")
 
     # Giải phóng VRAM GPU triệt để sau khi encode
     del model
